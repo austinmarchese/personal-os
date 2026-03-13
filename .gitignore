@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Keep template files, ignore user's actual entries
+# (uncomment these if you want to keep your entries private)
+# context/lived-experiences/*.md
+# !context/lived-experiences/_template.md
+# !context/lived-experiences/README.md
