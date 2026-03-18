@@ -48,7 +48,7 @@ Fill in:
 
 When you need feedback in their domain, tell Claude to reference their file.
 
-Example: "Review this thumbnail using the frameworks in `context/consultants/paddy-galloway/`"
+Example: "Review this thumbnail using the frameworks in `knowledge/experts/paddy-galloway/`"
 
 ## Example
 

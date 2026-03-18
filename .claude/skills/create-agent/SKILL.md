@@ -1,15 +1,15 @@
 ---
-name: create-consultant
-description: Clone an expert by extracting their frameworks into a consultant file
+name: create-agent
+description: Clone an expert by extracting their frameworks into an agent file
 ---
 
-# Create Consultant
+# Create Agent
 
-Turn an expert's thinking into a consultant you can reference anytime.
+Turn an expert's thinking into an AI persona you can reference anytime.
 
 ## When to Use
 
-Run `/create-consultant` when you:
+Run `/create-agent` when you:
 - Found someone whose frameworks you want to apply
 - Consumed enough of their content to extract patterns
 - Want AI to think like them when giving feedback
@@ -19,7 +19,7 @@ Run `/create-consultant` when you:
 ### Step 1: Identify the Expert
 
 Ask:
-> "Who do you want to clone as a consultant?
+> "Who do you want to clone as an AI agent?
 >
 > This should be someone whose thinking you've studied:
 > - Authors whose books changed how you think
@@ -68,11 +68,11 @@ Ask:
 >
 > Give me some examples of how they'd respond to work."
 
-### Step 5: Create the Consultant File
+### Step 5: Create the Agent File
 
 Create the file at:
 ```
-context/consultants/[name]/frameworks.md
+knowledge/experts/[name].md
 ```
 
 Use this structure:
@@ -122,19 +122,19 @@ Use this structure:
 
 ### Step 6: Confirm Creation
 
-> "Created [name] consultant at `context/consultants/[name]/frameworks.md`
+> "Created [name] agent at `knowledge/experts/[name].md`
 >
-> To use this consultant, tell me:
-> 'Review this using the frameworks in context/consultants/[name]/'
+> To use this agent, tell me:
+> 'Review this like [name] would'
 >
 > Or just mention their name and I'll apply their thinking."
 
 ## Example
 
 ```
-User: /create-consultant
+User: /create-agent
 
-Claude: Who do you want to clone as a consultant?
+Claude: Who do you want to clone as an AI agent?
 
 User: Tim Ferriss - he's known for lifestyle design and
 deconstructing world-class performers
@@ -159,10 +159,10 @@ User: Very Socratic - lots of questions. He'd ask things like
 "have you actually tested this assumption?" or "what's the
 worst case scenario, really?" He pushes back on complexity.
 
-Claude: Created Tim Ferriss consultant at
-`context/consultants/tim-ferriss/frameworks.md`
+Claude: Created Tim Ferriss agent at
+`knowledge/experts/tim-ferriss.md`
 
-To use: "Review my plan using Tim Ferriss's frameworks"
+To use: "Review my plan like Tim Ferriss would"
 ```
 
 ## Tips

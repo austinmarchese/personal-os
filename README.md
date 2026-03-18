@@ -1,6 +1,6 @@
 # Personal OS
 
-A starter kit for building your own AI-powered operating system. Turn Claude Code into a team of specialists that know how you think, what you've learned, and what good looks like.
+A starter kit for building your own AI-powered operating system. Turn Claude Code into a team that knows how you think, what you've learned, and what good looks like.
 
 **This isn't about vibe coding. It's about codifying the way you work.**
 
@@ -10,10 +10,11 @@ A starter kit for building your own AI-powered operating system. Turn Claude Cod
 
 Personal OS is a folder structure that makes AI smarter about YOU over time:
 
-- **Lived Experiences** — A journal of what you've learned, built, and discovered
-- **Consultants** — Cloned experts whose frameworks you can apply at scale
+- **Your profile** — Goals, voice, preferences
+- **Lived experiences** — A journal of what you've learned and built
+- **Experts** — Cloned advisors whose frameworks you can apply
+- **Projects** — Active work that becomes training data when done
 - **Skills** — Reusable workflows that improve themselves
-- **Best Work** — Examples that teach AI your standards
 
 The more you use it, the smarter it gets.
 
@@ -40,13 +41,13 @@ npm install -g @anthropic-ai/claude-code
 claude
 ```
 
-### 4. Create your first journal entry
+### 4. Set up your profile
 
 ```
-/daily-journal
+/interview-me
 ```
 
-That's it. You just started building your lived knowledge base.
+Claude will ask about your goals, background, and how you work. This becomes the foundation for everything else.
 
 ---
 
@@ -54,106 +55,25 @@ That's it. You just started building your lived knowledge base.
 
 ```
 personal-os/
-├── context/
-│   ├── lived-experiences/    # Your daily journal → lived knowledge base
-│   ├── best-work/            # Examples of YOUR best outputs
-│   └── consultants/          # Cloned experts (frameworks you've extracted)
-├── skills/
-│   └── daily-journal/        # Your first skill (included)
-└── CLAUDE.md                 # Instructions for Claude
+├── .claude/
+│   ├── agents/              # AI personas (experts you clone)
+│   └── skills/              # Reusable workflows
+│
+├── knowledge/               # What you KNOW
+│   ├── me/                  # Who you are
+│   │   ├── about.md         # Background, goals
+│   │   ├── voice.md         # How you communicate
+│   │   └── preferences.md   # Tools, workflows
+│   ├── lived-experiences/   # Daily learnings
+│   ├── best-work/           # Examples of your best outputs
+│   └── experts/             # Cloned expert frameworks
+│
+├── projects/                # What you're MAKING
+│   ├── [your projects]/     # Active work
+│   └── done/                # Finished (becomes training data)
+│
+└── CLAUDE.md
 ```
-
----
-
-## Daily Practice: Journal Your Learnings
-
-At the end of each day, run:
-
-```
-/daily-journal
-```
-
-Claude will ask what happened, extract the key learning, and save it to your lived knowledge base.
-
-**Why this matters:** Generic AI gives generic advice. AI with YOUR lived experiences gives advice grounded in what you've actually done.
-
----
-
-## Create Your First Skill
-
-A skill is a reusable workflow. Instead of explaining the same process every time, you write it once and run it as a command.
-
-**To create a skill, run:**
-
-```
-/create-skill
-```
-
-Claude will ask:
-1. What workflow do you want to codify?
-2. What are the steps?
-3. What inputs does it need?
-
-Then it creates the skill file for you.
-
-**Good first skills:**
-- Weekly review
-- Meeting notes processor
-- Email drafting workflow
-- Research synthesis
-
----
-
-## Improve Your Skills
-
-Skills should get better over time. After running a skill, if you notice something that could be improved, run:
-
-```
-/improve-skill
-```
-
-Or just tell Claude:
-
-> "Based on our conversation, can you update the [skill-name] skill with what we learned? Add it to the learnings section and update the process if needed."
-
-**Example improvements:**
-- "Add a step to check for X before Y"
-- "The output format should include Z"
-- "Ask about A upfront to avoid backtracking"
-
-The skill gets smarter with every use.
-
----
-
-## Clone Your First Consultant
-
-A "consultant" is someone whose thinking you want to apply at scale.
-
-**How to clone an expert:**
-
-1. Pick someone whose frameworks you admire
-2. Consume their content (videos, podcasts, articles)
-3. Run: `/create-consultant`
-
-Claude will help you extract:
-- Their core philosophy
-- Their frameworks
-- Questions they'd ask
-
-**Example included:** See `context/consultants/_example-consultant.md` for a complete example.
-
----
-
-## Add Your Best Work
-
-AI learns your standards from examples, not rules.
-
-Add files to `context/best-work/`:
-- Your best emails
-- Reports that landed well
-- Writing you're proud of
-
-When you ask AI to write something, it matches YOUR voice.
 
 ---
 
@@ -161,10 +81,62 @@ When you ask AI to write something, it matches YOUR voice.
 
 | Command | What it does |
 |---------|--------------|
+| `/interview-me` | Set up your profile (goals, voice, preferences) |
+| `/define-audience` | Define who you're creating content for |
 | `/daily-journal` | Capture today's learnings |
+| `/weekly-review` | Weekly reflection and planning |
+| `/brainstorm-project` | Turn an idea into a concrete project |
 | `/create-skill` | Create a new reusable workflow |
+| `/create-agent` | Clone an expert's frameworks |
 | `/improve-skill` | Enhance a skill based on learnings |
-| `/create-consultant` | Clone an expert's frameworks |
+
+---
+
+## First Week Workflow
+
+### Day 1: Set Up
+```
+/interview-me
+```
+Tell Claude about your goals, background, and how you work.
+
+### Day 2-6: Capture Daily
+```
+/daily-journal
+```
+At the end of each day, spend 2 minutes capturing what you learned.
+
+### Day 7: Review
+```
+/weekly-review
+```
+Reflect on the week, capture insights, plan ahead.
+
+---
+
+## Use Cases
+
+Personal OS works for:
+
+- **Content creators** — Social media, newsletters, YouTube
+- **Knowledge workers** — Reports, emails, presentations
+- **Side projects** — Apps, designs, experiments
+- **Life admin** — Selling a house, planning events, organizing
+
+### Example: Social Media Campaign
+
+1. `/interview-me` → Define your goals
+2. `/define-audience` → Who are you speaking to?
+3. `/brainstorm-project` → Plan the campaign
+4. Work on it in `projects/social-media-campaign/`
+5. When done, move to `projects/done/` → becomes training data
+
+### Example: Side Project
+
+1. `/brainstorm-project` → "I want to build an app for X"
+2. Claude creates `projects/my-app/` with phases and first step
+3. Work on it, capturing learnings with `/daily-journal`
+4. When shipped, move to `projects/done/`
 
 ---
 
@@ -172,13 +144,27 @@ When you ask AI to write something, it matches YOUR voice.
 
 The magic is in the feedback loops:
 
-1. **Lived experiences compound** — Every entry makes AI smarter about you
-2. **Skills improve themselves** — Add learnings after each use
-3. **Consultants get sharper** — Add new frameworks as you discover them
+1. **Your profile deepens** — Goals evolve, voice gets sharper
+2. **Lived experiences compound** — Every entry makes AI smarter
+3. **Skills improve themselves** — Add learnings after each use
+4. **Projects become training data** — Done work teaches AI your standards
 
-**After 30 days:** AI knows your voice, your experiences, and your standards.
+**After 30 days:** AI knows your voice, your experiences, and your goals.
 
 **After 90 days:** It feels like a team, not a tool.
+
+---
+
+## Adding Experts
+
+An "expert" is someone whose thinking you want to apply at scale.
+
+1. Pick someone whose frameworks you admire
+2. Consume their content (videos, podcasts, articles)
+3. Run: `/create-agent`
+4. Claude helps you extract their philosophy, frameworks, and questions
+
+See `knowledge/experts/_example-consultant.md` for a complete example.
 
 ---
 
